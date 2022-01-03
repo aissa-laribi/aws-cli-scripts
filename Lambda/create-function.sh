@@ -1,1 +1,1 @@
-aws lambda create-function --function-name my-function --role arn:aws:iam::804402402820:role/service-role/Test-role-6ya1obae --handler lambda_handler --runtime python3.7 --zip-file fileb:///home/acej/Downloads/python-main.zip
+aws lambda create-function --function-name <value>  --role arn:aws:iam::<value> --handler --lambda_handler <value> --runtime python3.7 --zip-file <value> 
