@@ -1,5 +1,5 @@
-aws ec2 create-key-pair --key-name <KeyName> --query 'KeyMaterial' --output-text > <KeyName.pem>
-chmod 400 <KeyName>
+aws ec2 create-key-pair --key-name <KeyName> --query 'KeyMaterial' --output -text> <KeyName>.pem
+chmod 400 <KeyName>.pem
 aws ec2 describe-security-groups
 #copy security-group-ids
 #Recent Linux ami IDs
@@ -9,6 +9,7 @@ aws ec2 run-instances --image-id  <ami-id> --instance-type <instance-type> --sec
 #Change the Default Ingress Security Rule In the Default Security Group
 #By Default the Ingress Security Rule Does Not Allow Connections From Outside
 #So We Have to Change The Rule To Access To The Security Group From the Internet Through Any Protocol
+aws ec2 describe-security-group-rules
 aws ec2 revoke-security-group-ingress --group-id <security-group-id> --security-group-rule-ids <security-group-rule-id>
 aws ec2 authorize-security-group-ingress --group-id <security-group-id> --ip-permissions "IpProtocol"="-1","IpRanges"="[{CidrIp=0.0.0.0/0,Description=Inbound}]"
 aws ec2 describe-instances
