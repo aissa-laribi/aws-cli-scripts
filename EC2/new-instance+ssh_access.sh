@@ -1,4 +1,4 @@
-aws ec2 create-key-pair --key-name <KeyName> --query 'KeyMaterial' --output -text> <KeyName>.pem
+aws ec2 create-key-pair --key-name <KeyName> --query 'KeyMaterial' --output text> <KeyName>.pem
 chmod 400 <KeyName>.pem
 aws ec2 describe-security-groups
 #copy security-group-ids
