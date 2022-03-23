@@ -13,7 +13,7 @@ aws ec2 describe-security-group-rules
 aws ec2 revoke-security-group-ingress --group-id <security-group-id> --security-group-rule-ids <security-group-rule-id>
 aws ec2 authorize-security-group-ingress --group-id <security-group-id> --ip-permissions "IpProtocol"="-1","IpRanges"="[{CidrIp=0.0.0.0/0,Description=Inbound}]"
 aws ec2 describe-instances
-ssh -i "<KeyName.pem>" ec2-user@ec2-<X-X-X-X>.compute-1.amazonaws.com
+ssh -i "<KeyName.pem>" ec2-user@<PublicIPAddress>
 
 
 
